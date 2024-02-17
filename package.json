@@ -3,10 +3,6 @@
   "version": "0.0.0",
   "description": "CEDEARs stock list with their ratios",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "cedears.json"
-  ],
   "scripts": {
     "test": "standard && brittle test.js"
   },
