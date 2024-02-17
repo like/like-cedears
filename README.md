@@ -1,6 +1,6 @@
 # like-cedears
 
-Description
+CEDEARs stock list with their ratios
 
 ```
 npm i like-cedears

@@ -1,7 +1,7 @@
 {
   "name": "like-cedears",
   "version": "0.0.0",
-  "description": "Get CEDEARs stock list with their ratios",
+  "description": "CEDEARs stock list with their ratios",
   "main": "index.js",
   "files": [
     "index.js",

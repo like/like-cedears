@@ -1,7 +1,7 @@
 const test = require('brittle')
 const cedears = require('./index.js')
 
-test('list', async function (t) {
+test('list', function (t) {
   t.is(Object.keys(cedears).length, 291)
 
   // Double space fix
@@ -13,7 +13,7 @@ test('list', async function (t) {
     multiplier: 33
   })
 
-  // London stock exchange multi-line bug
+  // Multi-line market bug
   t.alike(cedears.SMSN, {
     name: 'Samsung Electronics Co. Ltd.',
     code: 'SMSN',
@@ -21,9 +21,18 @@ test('list', async function (t) {
     ratio: '14:1',
     multiplier: 14
   })
+
+  // Multi-line name bug
+  t.alike(cedears.SBS, {
+    name: 'Companhia de Saneamento Básico do Estado de São Paulo–Sabesp',
+    code: 'SBS',
+    market: 'NYSE',
+    ratio: '1:2',
+    multiplier: 0.5
+  })
 })
 
-test('markets', async function (t) {
+test('markets', function (t) {
   const markets = new Set()
 
   for (const code in cedears) {
@@ -48,7 +57,7 @@ test('markets', async function (t) {
   ]))
 })
 
-test('regular split', async function (t) {
+test('regular split', function (t) {
   const cedear = cedears.SHOP
 
   t.alike(cedear, {
@@ -69,7 +78,7 @@ test('regular split', async function (t) {
   t.is(stockDollarRate, 1080.8476853548307)
 })
 
-test('reverse split', async function (t) {
+test('reverse split', function (t) {
   const cedear = cedears.SAN
 
   t.alike(cedear, {
@@ -88,4 +97,22 @@ test('reverse split', async function (t) {
 
   t.is(stockPriceARS, 4456.5)
   t.is(stockDollarRate, 1133.969465648855)
+})
+
+test('others', function (t) {
+  t.alike(cedears.ANF, {
+    name: 'Abercrombie & Fitch Co',
+    code: 'ANF',
+    market: 'NYSE',
+    ratio: '1:1',
+    multiplier: 1
+  })
+
+  t.alike(cedears.LKOD, {
+    name: 'Pjsc Lukoil',
+    code: 'LKOD',
+    market: 'LONDON STOCK EXCHANGE',
+    ratio: '4:1',
+    multiplier: 4
+  })
 })

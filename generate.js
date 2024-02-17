@@ -28,14 +28,6 @@ async function main () {
     const multiplier = parseInt(split[0], 10) / parseInt(split[1], 10)
     if (Number.isNaN(multiplier)) throw new Error('Invalid ratio ' + row[3] + ' for ' + row[1])
 
-    const cedear = {
-      name: row[0],
-      code: row[1],
-      market: row[2] === '-' ? null : row[2],
-      ratio: split[0] + ':' + split[1],
-      multiplier
-    }
-
     cedears[row[1]] = [row[0], row[2] === '-' ? null : row[2], split[0] + ':' + split[1], multiplier]
   }
 
@@ -47,8 +39,6 @@ async function pagerender (pageData) {
   const lines = []
 
   for (let i = 0; i < textContent.items.length; i++) {
-    const item = textContent.items[i]
-
     // Main problem with the PDF is that there are texts with slightly different font sizes and multi-line values
     // Find the closest ratio alike value, and reverse lookup the fields
     for (let j = i + 1; j < textContent.items.length; j++) {
