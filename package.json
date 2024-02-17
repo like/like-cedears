@@ -1,6 +1,6 @@
 {
   "name": "like-cedears",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "CEDEARs stock list with their ratios",
   "main": "index.js",
   "scripts": {
