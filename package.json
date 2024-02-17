@@ -1,0 +1,27 @@
+{
+  "name": "like-cedears",
+  "version": "0.0.0",
+  "description": "Get CEDEARs stock list with their ratios",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cedears.json"
+  ],
+  "scripts": {
+    "test": "standard && brittle test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukks/like-cedears.git"
+  },
+  "author": "Lucas Barrena (LuKks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukks/like-cedears/issues"
+  },
+  "homepage": "https://github.com/lukks/like-cedears#readme",
+  "devDependencies": {
+    "brittle": "^3.3.2",
+    "standard": "^17.1.0"
+  }
+}
